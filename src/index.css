@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: #08080f;
+    color: #ffffff;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overscroll-behavior: none;
+  }
+
+  * {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  input {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+}
+
+@layer components {
+  .btn-base {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl font-bold
+           transition-all duration-200 active:scale-95 select-none
+           focus:outline-none focus-visible:ring-4;
+    font-family: 'Poppins', system-ui, sans-serif;
+  }
+
+  .btn-primary {
+    @apply btn-base text-white px-8 py-4 text-lg shadow-lg
+           hover:from-accent-400 hover:to-accent-500;
+    background-image: linear-gradient(to right, #f97316, #ea580c);
+    box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.3);
+  }
+  .btn-primary:hover {
+    background-image: linear-gradient(to right, #fb923c, #f97316);
+    box-shadow: 0 10px 25px -3px rgba(249, 115, 22, 0.5);
+  }
+
+  .btn-secondary {
+    @apply btn-base text-white px-6 py-3 text-base;
+    background-color: rgba(30, 30, 58, 0.8);
+    border: 1px solid #3a3a5e;
+  }
+  .btn-secondary:hover {
+    background-color: #2a2a4e;
+  }
+
+  .btn-ghost {
+    @apply btn-base px-4 py-2 text-sm;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .btn-ghost:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .btn-danger {
+    @apply btn-base text-white px-6 py-3 text-base;
+    background-color: rgba(239, 68, 68, 0.9);
+    box-shadow: 0 10px 15px -3px rgba(239, 68, 68, 0.2);
+  }
+  .btn-danger:hover {
+    background-color: #f87171;
+  }
+
+  .card-surface {
+    background-color: rgba(16, 16, 34, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(42, 42, 78, 0.5);
+    border-radius: 1.5rem;
+  }
+
+  .glow-text {
+    text-shadow: 0 0 30px rgba(249, 115, 22, 0.5);
+  }
+
+  .shimmer-bg {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.03) 0%,
+      rgba(255, 255, 255, 0.08) 50%,
+      rgba(255, 255, 255, 0.03) 100%
+    );
+    background-size: 200% 100%;
+  }
+
+  .perspective {
+    perspective: 1200px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
